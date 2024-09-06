@@ -6,8 +6,8 @@ import "./globals.css";
 const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fuzzie",
-  description: "Automate Your Work with Fuzzie",
+  title: "FlowSync",
+  description: "Automate Your Work with FlowSync",
 };
 
 export default function RootLayout({
