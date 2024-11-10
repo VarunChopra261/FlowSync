@@ -1,24 +1,23 @@
-'use client'
-import React, { useEffect } from 'react'
-import { ModeToggle } from '../global/mode-toggle'
-import { Book, Headphones, Search } from 'lucide-react'
-import Templates from '../icons/cloud_download'
-import { Input } from '@/src/components/ui/input'
+'use client';
+import React, { useEffect } from 'react';
+import { ModeToggle } from '../global/mode-toggle';
+import { Book, Headphones, Search } from 'lucide-react';
+import Templates from '../icons/cloud_download';
+import { Input } from '@/src/components/ui/input';
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/src/components/ui/tooltip'
-import { UserButton } from '@clerk/nextjs'
+} from '@/src/components/ui/tooltip';
+import { UserButton } from '@clerk/nextjs';
 
+type Props = {};
 
-type Props = {}
-
-const InfoBar = (props: Props) => { 
-    return (
-    <div className="flex flex-row justify-end gap-6 items-center px-4 py-4 w-full dark:bg-black ">
+const InfoBar = (props: Props) => {
+  return (
+    <div className="flex flex-row justify-end gap-6 items-center px-4 py-4 w-full dark:bg-black">
       <span className="flex items-center rounded-full bg-muted px-4">
         <Search />
         <Input
@@ -51,4 +50,4 @@ const InfoBar = (props: Props) => {
   );
 };
 
-export default InfoBar
+export default InfoBar;
