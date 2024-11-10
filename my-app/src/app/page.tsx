@@ -7,7 +7,6 @@ import Navbar from '@/src/components/global/navbar'
 import { Button } from '@/src/components/ui/button'
 import { clients, products } from '@/src/lib/constant'
 import { CheckIcon } from 'lucide-react'
-import Image from 'next/image'
 import React from 'react'
 
 export default function Home() {

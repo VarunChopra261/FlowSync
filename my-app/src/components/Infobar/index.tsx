@@ -48,7 +48,7 @@ const InfoBar = (props: Props) => {
       </TooltipProvider>
       <UserButton />
     </div>
-  )
-}
+  );
+};
 
 export default InfoBar

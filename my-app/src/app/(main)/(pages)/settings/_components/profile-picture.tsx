@@ -8,8 +8,8 @@ import { X } from 'lucide-react';
 
 type Props = {
   userImage: string | null;
-  onDelete?: () => Promise<any>;
-  onUpload: (cdnUrl: string) => Promise<any>;
+  onDelete?: () => Promise<void>;
+  onUpload: (cdnUrl: string) => Promise<void>;
 };
 
 const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
@@ -17,10 +17,8 @@ const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
 
   const onRemoveProfileImage = async () => {
     if (onDelete) {
-      const response = await onDelete();
-      if (response) {
-        router.refresh();
-      }
+      await onDelete();
+      router.refresh();
     }
   };
 

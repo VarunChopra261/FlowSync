@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/src/providers/theme-provider";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { User } from "lucide-react";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
