@@ -8,6 +8,7 @@ export const EditUserProfileSchema=z.object({
 export type ConnectionTypes = 'Google Drive' | 'Notion' | 'Slack' | 'Discord'
 
 export type Connection = {
+    connected: unknown
     title: ConnectionTypes
     description: string
     image: string

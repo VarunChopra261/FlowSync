@@ -6,7 +6,7 @@ import Payment from '../components/icons/payment'
 import Settings from '../components/icons/settings'
 import Workflows from '../components/icons/workflows'
 import { Connection } from './types'
-// import { Connection } from './types'
+//import { Connection } from './types'
 
 export const clients = [...new Array(10)].map((client, index) => ({
   href: `/${index + 1}.png`,
@@ -155,6 +155,7 @@ export const CONNECTIONS: Connection[] = [
     image: '/googleDrive.png',
     connectionKey: 'googleNode',
     alwaysTrue: true,
+    connected: undefined
   },
   {
     title: 'Discord',
@@ -162,6 +163,7 @@ export const CONNECTIONS: Connection[] = [
     image: '/discord.png',
     connectionKey: 'discordNode',
     accessTokenKey: 'webhookURL',
+    connected: undefined
   },
   {
     title: 'Notion',
@@ -169,14 +171,15 @@ export const CONNECTIONS: Connection[] = [
     image: '/notion.png',
     connectionKey: 'notionNode',
     accessTokenKey: 'accessToken',
+    connected: undefined
   },
   {
     title: 'Slack',
-    description:
-      'Use slack to send notifications to team members through your own custom bot.',
+    description: 'Use slack to send notifications to team members through your own custom bot.',
     image: '/slack.png',
     connectionKey: 'slackNode',
     accessTokenKey: 'slackAccessToken',
     slackSpecial: true,
+    connected: undefined
   },
 ]
