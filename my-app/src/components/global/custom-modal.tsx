@@ -12,7 +12,7 @@ import {
 import { useModal } from '@/src/providers/modal-provider'
 import React from 'react'
 import { Button } from '../ui/button'
-  
+
 
   
   type Props = {
