@@ -8,7 +8,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { Label } from '@/src/components/ui/label'
-import { Switch } from '@/components/ui/switch'
+import { Switch } from '@/src/components/ui/switch'
 
 
 type Props = {
