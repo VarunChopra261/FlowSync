@@ -39,12 +39,8 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
     "react-resizable-panels": "^2.1.7",
-<<<<<<< HEAD
-    "reactflow": "^11.1 1.4",
+    "reactflow": "^11.11.4",
     "sonner": "^1.7.1",
-=======
-    "sonner": "^1.7.0",
->>>>>>> parent of 10e4cc7 (add packages)
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.0.3",
