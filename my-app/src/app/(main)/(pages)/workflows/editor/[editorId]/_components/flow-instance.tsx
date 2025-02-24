@@ -60,13 +60,13 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
                     onClick={onFlowAutomation}
                     disabled={isFlow.length < 1}
                 >
-                 Save
+                    Save
                 </Button>
                 <Button
                     disabled={isFlow.length < 1}
                     onClick={onPublishWorkflow}
                 >
-                 Publish
+                    Publish
                 </Button>
             </div>
             {children}

@@ -1,7 +1,6 @@
 'use client'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { addEdge, Background, Connection, Controls, Edge, EdgeChange, MiniMap, NodeChange, ReactFlow, ReactFlowInstance,  applyNodeChanges,
-  applyEdgeChanges, } from '@xyflow/react';
+import { addEdge, Background, Connection, Controls, Edge, EdgeChange, MiniMap, NodeChange, ReactFlow, ReactFlowInstance } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { EditorCanvasCardType, EditorNodeType } from '@/src/lib/types';
 import { useEditor } from '@/src/providers/editor-provider';
@@ -243,7 +242,7 @@ const EditorCanvas = () => {
               edges={edges}
               nodes={nodes}
             >
-              <EditorCanvasSidebar nodes={nodes} />
+              <EditorCanvasSidebar nodes={[]} />
             </FlowInstance>
           )}
         </ResizablePanel>
@@ -251,4 +250,4 @@ const EditorCanvas = () => {
     )
   }
   
-  export default EditorCanvas 
+  export default EditorCanvas
