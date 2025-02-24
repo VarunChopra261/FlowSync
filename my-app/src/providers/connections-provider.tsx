@@ -1,6 +1,5 @@
 'use client'
 import { createContext, useContext, useState } from 'react'
-
 export type ConnectionProviderProps = {
   discordNode: {
     webhookURL: string
