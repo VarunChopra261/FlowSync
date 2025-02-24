@@ -7,8 +7,7 @@ export const EditUserProfileSchema=z.object({
 export const WorkflowFormSchema = z.object({
     name: z.string().min(1, 'Required'),
     description: z.string().min(1, 'Required'),
-})
-
+  })
 export type ConnectionTypes = 'Google Drive' | 'Notion' | 'Slack' | 'Discord'
 
 export type Connection = {
@@ -32,28 +31,25 @@ export type Connection = {
   | 'Google Calendar'
   | 'Trigger'
   | 'Action'
-  | 'Wait';
-
+  | 'Wait'
   export type EditorCanvasCardType = {
-    title: string;
-    description: string;
-    completed: boolean;
-    current: boolean;
-    metadata: any;
-    type: EditorCanvasTypes;
-  };
-
+    title: string
+    description: string
+    completed: boolean
+    current: boolean
+    metadata: any
+    type: EditorCanvasTypes
+  }
   export type EditorNodeType = {
     id: string
     type: EditorCanvasCardType['type']
     position: {
-      x: number;
-      y: number;
-    };
+      x: number
+      y: number
+    }
     data: EditorCanvasCardType
-  };
-  export type EditorNode = EditorNodeType;
-
+  }
+  export type EditorNode = EditorNodeType
   export type EditorActions =
   | {
       type: 'LOAD_DATA'
