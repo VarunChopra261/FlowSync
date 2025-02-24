@@ -1,0 +1,34 @@
+npm i -D prisma
+
+npx prisma init
+
+npx prisma generate
+
+npx prisma db push
+
+npx prisma studio
+
+npm i @uploadcare/react-uploader
+
+npm install @clerk/nextjs
+
+
+
+----------------------------------
+
+
+npx shadcn@latest add tabs
+
+npx shadcn@latest add accordion
+
+npm install zustand
+
+npm install axios
+
+npm install @notionhq/client
+
+npm install googleapis
+
+npm install next@latest react@latest react-dom@latest
+
+
