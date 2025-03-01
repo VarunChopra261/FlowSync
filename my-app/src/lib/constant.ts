@@ -148,6 +148,17 @@ export const EditorCanvasDefaultCardTypes = {
   },
 }
 
+/**
+ * Maps node titles to their corresponding connection property names in the ConnectionProvider
+ */
+export const nodeMapper: Record<string, string> = {
+  'Google Drive': 'googleDrive',
+  'Slack': 'slack',
+  'Discord': 'discord',
+  'Notion': 'notion',
+  // Add any additional node types as needed
+}
+
 export const CONNECTIONS: Connection[] = [
   {
     title: 'Google Drive',
