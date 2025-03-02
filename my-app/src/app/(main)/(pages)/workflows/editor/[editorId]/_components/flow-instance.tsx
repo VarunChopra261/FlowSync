@@ -35,6 +35,7 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
         if (response) toast.message(response)
     }, [pathname])
 
+
     const onAutomateFlow = useCallback(async () => {
         const flows: any = []
         const connectedEdges = edges.map((edge) => edge.target)

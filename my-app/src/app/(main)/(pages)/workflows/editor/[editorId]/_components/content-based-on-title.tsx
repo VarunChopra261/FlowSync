@@ -7,6 +7,7 @@ import { Input } from "@/src/components/ui/input"
 import GoogleFileDetails from "./google-file-details"
 import { nodeMapper } from "@/src/lib/constant"
 import GoogleDriveFiles from "./google-drive-files"
+import ActionButton from "./action-button"
 
 
 export interface Option {
@@ -97,6 +98,12 @@ type Props = {
                 </Card>
               )}
               {title === 'Google Drive' && <GoogleDriveFiles />}
+              <ActionButton
+            currentService={title}
+            nodeConnection={nodeConnection}
+            channels={selectedSlackChannels}
+            setChannels={setSelectedSlackChannels}
+          />
             </div>
           </Card>
         </AccordionContent>
