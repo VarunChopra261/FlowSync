@@ -2,6 +2,7 @@ import { ConnectionProviderProps } from "@/src/providers/connections-provider"
 import { EditorState } from "@/src/providers/editor-provider"
 import { useFlowSyncStore } from "@/src/store"
 import ContentBasedOnTitle from "./content-based-on-title"
+import React from 'react'
 
 type Props = {
   state: EditorState
