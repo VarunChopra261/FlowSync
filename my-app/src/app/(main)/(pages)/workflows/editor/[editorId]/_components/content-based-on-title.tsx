@@ -2,13 +2,13 @@ import {Card,CardHeader, CardTitle, CardDescription, CardContent } from "@/src/c
 import { onContentChange } from "@/src/lib/editor-utils"
 import { ConnectionProviderProps } from "@/src/providers/connections-provider"
 import { EditorState } from "@/src/providers/editor-provider"
-import { AccordionContent } from "@radix-ui/react-accordion"
+import { AccordionContent } from "@/components/ui/accordion"
 import { Input } from "@/src/components/ui/input"
 import GoogleFileDetails from "./google-file-details"
-import { nodeMapper } from "@/src/lib/constant"
+import { nodeMapper } from "@/src/lib/types"
 import GoogleDriveFiles from "./google-drive-files"
 import ActionButton from "./action-button"
-
+import React from 'react'
 
 export interface Option {
     value: string
