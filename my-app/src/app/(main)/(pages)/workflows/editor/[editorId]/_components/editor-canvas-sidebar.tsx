@@ -1,8 +1,7 @@
 'use client'
-import { Card } from '@/src/components/ui/card'
-import { CardHeader, CardTitle, CardDescription } from '@/src/components/ui/card'
+import { Card, CardHeader, CardTitle, CardDescription } from '@/src/components/ui/card'
 import { EditorCanvasDefaultCardTypes, CONNECTIONS } from '@/src/lib/constant'
-import { EditorCanvasTypes } from '@/src/lib/types'
+import { EditorCanvasTypes, EditorNodeType } from '@/src/lib/types'
 import { useNodeConnections } from '@/src/providers/connections-provider'
 import { useEditor } from '@/src/providers/editor-provider'
 import { Separator } from '@/src/components/ui/separator'
@@ -21,7 +20,7 @@ import RenderOutputAccordion from './render-output-accordion'
 
 
 type Props = {
-  nodes: Node[]
+  nodes: EditorNodeType[]
 }
 
 // Define Node type if not already defined
@@ -89,7 +88,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
                   <RenderConnectionAccordion
                     key={connection.title}
                     state={state}
-                    connection={connection as any}
+                    connection={connection}
                   />
                 ))}
               </AccordionContent>
