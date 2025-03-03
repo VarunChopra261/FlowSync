@@ -1,3 +1,5 @@
+'use server'
+
 import { db } from "@/src/lib/db"
 import { currentUser, Client } from "@clerk/nextjs/server"
 
