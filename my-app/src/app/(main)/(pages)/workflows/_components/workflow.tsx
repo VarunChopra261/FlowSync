@@ -9,6 +9,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Label } from '@/src/components/ui/label'
 import { Switch } from '@/src/components/ui/switch'
+import { onFlowPublish } from '../editor/[editorId]/_actions/workflow-connections'
+import { toast } from 'sonner'
 
 
 type Props = {
@@ -19,6 +21,14 @@ type Props = {
 }
 
 const Workflow = ({ description, id, name, publish }: Props) => {
+  const onPublishFlow = async (event: any) => {
+    const response = await onFlowPublish(
+      id,
+      event.target.ariaChecked === 'false'
+    )
+    if (response) toast.message(response)
+  }
+
   return (
     <Card className="flex w-full items-center justify-between">
       <CardHeader className="flex flex-col gap-4">
@@ -62,7 +72,7 @@ const Workflow = ({ description, id, name, publish }: Props) => {
         <Switch
           id="airplane-mode"
           // onClick={onPublishFlow}
-          //defaultChecked={publish!}
+          defaultChecked={publish!}
         />
       </div>
     </Card>
