@@ -18,7 +18,7 @@ import RenderConnectionAccordion from './render-connection-accordion'
 import RenderOutputAccordion from './render-output-accordion'
 import { useFlowSyncStore } from '@/src/store'
 import {
-  // fetchBotSlackChannels,
+  fetchBotSlackChannels,
   onConnections,
   onDragStart,
 } from '@/src/lib/editor-utils'
@@ -41,14 +41,14 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
     }
   }, [state])
 
-  // useEffect(() => {
-  //   if (nodeConnection.slackNode.slackAccessToken) {
-  //     fetchBotSlackChannels(
-  //       nodeConnection.slackNode.slackAccessToken,
-  //       setSlackChannels
-  //     )
-  //   }
-  // }, [nodeConnection])
+  useEffect(() => {
+    if (nodeConnection.slackNode.slackAccessToken) {
+      fetchBotSlackChannels(
+        nodeConnection.slackNode.slackAccessToken,
+        setSlackChannels
+      )
+    }
+  }, [nodeConnection])
 
   return (
     <aside>
