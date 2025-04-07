@@ -3,6 +3,7 @@ import { useModal } from '@/src/providers/modal-provider'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { BaseSyntheticEvent, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
 import { z } from 'zod'
 import {
   Card,
@@ -23,6 +24,8 @@ import { Loader2 } from 'lucide-react'
 import { Input } from '../ui/input' 
 import { Button } from '../ui/button'
 import { toast } from 'sonner'
+import { onCreateWorkflow } from '@/src/app/(main)/(pages)/workflows/_actions/workflow-connections'
+
 type Props = {
     title?: string
     subTitle?: string
@@ -30,6 +33,7 @@ type Props = {
 
 const Workflowform = ({ subTitle, title }: Props) => {
     const { setClose } = useModal()
+    const router = useRouter() // Use the router hook correctly
     const [isLoading, setIsLoading] = useState(false)
     const form = useForm<z.infer<typeof WorkflowFormSchema>>({
       mode: 'onChange',
@@ -39,9 +43,22 @@ const Workflowform = ({ subTitle, title }: Props) => {
         description: '',
       },
     })
-  function handleSubmit(data: { name: string; description: string }, event?: BaseSyntheticEvent<object, any, any> | undefined): unknown {
-    throw new Error('Function not implemented.')
-  }
+    const handleSubmit = async (values: z.infer<typeof WorkflowFormSchema>) => {
+      setIsLoading(true)
+      try {
+        const workflow = await onCreateWorkflow(values.name, values.description)
+        if (workflow) {
+          toast.message(workflow.message)
+          router.refresh()
+        }
+      } catch (error) {
+        toast.error('Failed to create workflow')
+      } finally {
+        setIsLoading(false)
+        setClose()
+      }
+    }
+  
 
     return (
       <Card className="w-full max-w-[650px] border-none">
