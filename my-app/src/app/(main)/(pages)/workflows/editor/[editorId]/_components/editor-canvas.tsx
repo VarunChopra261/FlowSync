@@ -17,7 +17,6 @@ import { toast } from 'sonner';
 import FlowInstance from './flow-instance';
 import EditorCanvasSidebar from './editor-canvas-sidebar';
 import {v4} from 'uuid'
-import { onGetNodesEdges } from '../../../_actions/workflow-connections';
 
 type Props = {
   nodes: EditorNodeType[]
@@ -31,7 +30,7 @@ const EditorCanvas = () => {
     const { dispatch, state } = useEditor()
     const [nodes, setNodes] = useState(initialNodes)
     const [edges, setEdges] = useState(initialEdges)
-    const [isWorkFlowLoading, setIsWorkFlowLoading] = useState<boolean>(false)
+    const [isWorkFlowLoading] = useState<boolean>(false)
     const [reactFlowInstance, setReactFlowInstance] =
       useState<ReactFlowInstance>()
     const pathname = usePathname()
@@ -153,24 +152,7 @@ const EditorCanvas = () => {
       }),
       []
     )
-    const onGetWorkFlow = async () => {
-      setIsWorkFlowLoading(true)
-      try {
-        const response = await onGetNodesEdges(pathname.split('/').pop()!)
-        if (response) {
-          setEdges(JSON.parse(response.edges!))
-          setNodes(JSON.parse(response.nodes!))
-        }
-      } catch (error) {
-        console.error("Error loading workflow:", error)
-      } finally {
-        setIsWorkFlowLoading(false)
-      }
-    };
-    
-    useEffect(() => {
-      onGetWorkFlow()
-    }, [])
+  
     return (
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel defaultSize={70}>
@@ -269,4 +251,4 @@ const EditorCanvas = () => {
     )
   }
   
-  export default EditorCanvas
+  export default EditorCanvas 
