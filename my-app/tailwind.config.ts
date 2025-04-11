@@ -51,6 +51,16 @@ const config:Config = {
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		borderRadius: {
@@ -137,7 +147,29 @@ const config:Config = {
   		}
   	}
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function({ addBase }) {
+      addBase({
+        '@layer base': {
+          ':root': {
+            '--chart-1': '12 76% 61%',
+            '--chart-2': '173 58% 39%',
+            '--chart-3': '197 37% 24%',
+            '--chart-4': '43 74% 66%',
+            '--chart-5': '27 87% 67%',
+          },
+          '.dark': {
+            '--chart-1': '220 70% 50%',
+            '--chart-2': '160 60% 45%',
+            '--chart-3': '30 80% 55%',
+            '--chart-4': '280 65% 60%',
+            '--chart-5': '340 75% 55%',
+          }
+        }
+      })
+    }
+  ],
 } satisfies Config
 
 // function addVariablesForColors({ addBase, theme }: any) {
