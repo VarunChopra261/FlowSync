@@ -1,6 +1,6 @@
 "use client"
 import * as ResizablePrimitive from "react-resizable-panels"
-
+import React from "react"
 import { cn } from "@/src/lib/utils"
 import { DragHandleDots2Icon } from "@radix-ui/react-icons"
 
