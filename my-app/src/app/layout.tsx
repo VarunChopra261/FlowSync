@@ -6,6 +6,8 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import ModalProvider from "../providers/modal-provider";
 import { Toaster } from "@/components/ui/sonner"
+import Billing from "./(main)/(pages)/billing/page";
+import { BillingProvider } from "../providers/billing-provider";
 const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -29,10 +31,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <BillingProvider>
               <ModalProvider>
                 {children}
                 <Toaster />
               </ModalProvider>
+            </BillingProvider>
           </ThemeProvider>
         </body>
       </html>
